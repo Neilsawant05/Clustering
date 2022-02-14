@@ -2,9 +2,8 @@
 
 GEO-LOCATION CLUSTERING USING THE
 k-MEANS ALGORITHM
-Due: Monday 13 December 2021 (6:00 PM) – NO EXTENSION
-Project Goal
-In this project you and your group will use SPARK to implement an iterative algorithm that
+Goal
+Use SPARK to implement an iterative algorithm that
 solves the clustering problem in an efficient distributed fashion. Clustering is the process 
 of grouping a set of objects (or data points) into a set of k clusters of similar objects. Thus,
 objects that are similar should be in the same cluster and objects that are dissimilar should
@@ -18,7 +17,7 @@ purchasing behaviors.
 patterns.
 • Logistics: find the best locations for warehouses or shipping centers to minimize
 shipping times.
-We will approach the clustering problem by implementing the k-means algorithm. kmeans is a distance-based method that iteratively updates the location of k cluster centroids 
+Approach the clustering problem by implementing the k-means algorithm. kmeans is a distance-based method that iteratively updates the location of k cluster centroids 
 until convergence. The main user-defined ingredients of the k-means algorithm are the 
 distance function (often Euclidean distance) and the number of clusters k. This parameter 
 needs to be set according to the application or problem domain. (There is no magic 
@@ -39,12 +38,9 @@ points and their respective closest centroid. MMDS chapter 7.3 (
 http://infolab.stanford.edu/~ullman/mmds/ch7.pdf ) gives pseudo code and implementation
 strategies for the k-means clustering algorithm.
 Problem 2: Data Preparation
-This problem prepares three datasets. Submit your programs for data pre-processing to 
-the Github repository. Detailed submission instructions follow below.
-3
+This problem prepares three datasets. 
 Step 1: Prepare device status data
-Review the contents of the file data/devicestatus.txt. Upload this file to a S3 bucket. You 
-will have to pre-process the data in order to get it into a standardized format for later 
+Review the contents of the file data/devicestatus.txt. Upload this file to a S3 bucket. Pre-process the data in order to get it into a standardized format for later 
 processing. This is a common part of the ETL (Extract-Load-Transform) process called data 
 scrubbing.
 The input data contains information collected from mobile devices on Loudacre’s network, 
@@ -68,11 +64,7 @@ Split this field by spaces to separate the manufacturer from the model (e.g. man
 • Confirm that the data in the file(s) was saved correctly. Provide a screenshot named
 devicedata.png showing a couple of records in your Github repository.
 • Visualize the (latitude, longitude) pairs of the device location data. You do not have to 
-use SPARK for the visualization. You can use any technique and 3rd party library (e.g., 
-https://www.youtube.com/watch?v=XiZbrii49pI )
-• Submit your implementation by adding a Jupyter Notebook file (Mobilenet.ipynb) including
-your SPARK statements to the clustering/Step1 folder in your Github repository. Do NOT 
-add any data!
+use SPARK for the visualization.
 Step 2: Get and Visualize synthetic location data
 Upload the synthetic clustering data from http://statistical-research.com/wp-content/
 uploads/2013/11/sample_geo.txt to S3 and visualize the (latitude, longitude) pairs. You 
@@ -147,27 +139,9 @@ other statistics from the Spark History Server. You might want to rerun each exp
 couple of times and use the average runtime for a more robust comparison (time 
 permitting).
 Step 5: Documentation of Approach and Results (Report)
-Write the project report documenting your clustering approach, your implementation, the 
-obtained results, and runtime analysis. This report should be readable for an informed 
-outsider and it should not require the reader to look at or run anycode.
-Bonus: Big Data and Cloud Execution (4 points)
 Find and/or crawl an even bigger dataset to cluster using your k-means approach. This 
 dataset should be big enough that your k-means clustering computation is not feasible in 
 your pseudo-cluster. Cluster this data by executing your SPARK program on Amazon EMR 
-and report your results and experiences. If, you do not find another geo-location dataset, 
-feel free to perform clustering on any other Big data clustering problem. Keep in mind that 
-for higher-dimensional data, the interpretation and visualization of the retrieved clusters 
-is much more challenging.
-Document your cloud execution approach and provide the data source in your final 
-project report. Add your pre-processing code to the src folder in your Github
-repository. Describe your findings including dataset size and runtimes in your final
-project report.
-Final Submission Instructions
-Submit your report including documentation, as well as, results as project_report.pdf by 
-adding it to the /clustering folder in your Github repository. Submit your 
-implementation by adding your Jupyter Notebooks to the /clustering/src folder in your 
-Github repository. Do NOT add any data!
-Copyrights
-Problems are adapted and data is taken from Marion Neumann’s CSE 427 (Fall 2019) course 
-at Washington Universityin St. Louis, which was itselfadopted from Pedro Domingos’ class on
-Data Mining/Machine Learning at University of Washington, 2012.
+and report your results and experiences.
+
+
